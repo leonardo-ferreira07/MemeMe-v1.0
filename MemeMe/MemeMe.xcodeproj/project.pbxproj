@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A712960D1F7291E40053F5AC /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712960C1F7291E40053F5AC /* PickImageViewController.swift */; };
 		A75EA5C21F68E46700B025DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EA5C11F68E46700B025DD /* AppDelegate.swift */; };
-		A75EA5C41F68E46700B025DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EA5C31F68E46700B025DD /* ViewController.swift */; };
 		A75EA5C71F68E46700B025DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75EA5C51F68E46700B025DD /* Main.storyboard */; };
 		A75EA5C91F68E46700B025DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75EA5C81F68E46700B025DD /* Assets.xcassets */; };
 		A75EA5CC1F68E46700B025DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75EA5CA1F68E46700B025DD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A712960C1F7291E40053F5AC /* PickImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
 		A75EA5BE1F68E46700B025DD /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75EA5C11F68E46700B025DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A75EA5C31F68E46700B025DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A75EA5C61F68E46700B025DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A75EA5C81F68E46700B025DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A75EA5CB1F68E46700B025DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +35,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A712960A1F7291BB0053F5AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A712960B1F7291C20053F5AC /* Controllers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A712960B1F7291C20053F5AC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A712960C1F7291E40053F5AC /* PickImageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A712960E1F7291EB0053F5AC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A75EA5CA1F68E46700B025DD /* LaunchScreen.storyboard */,
+				A75EA5C51F68E46700B025DD /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A712960F1F7291FB0053F5AC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A75EA5C81F68E46700B025DD /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		A75EA5B51F68E46700B025DD = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +87,10 @@
 		A75EA5C01F68E46700B025DD /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				A712960A1F7291BB0053F5AC /* Views */,
 				A75EA5C11F68E46700B025DD /* AppDelegate.swift */,
-				A75EA5C31F68E46700B025DD /* ViewController.swift */,
-				A75EA5C51F68E46700B025DD /* Main.storyboard */,
-				A75EA5C81F68E46700B025DD /* Assets.xcassets */,
-				A75EA5CA1F68E46700B025DD /* LaunchScreen.storyboard */,
+				A712960E1F7291EB0053F5AC /* Storyboards */,
+				A712960F1F7291FB0053F5AC /* Assets */,
 				A75EA5CD1F68E46700B025DD /* Info.plist */,
 			);
 			path = MemeMe;
@@ -136,8 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75EA5C41F68E46700B025DD /* ViewController.swift in Sources */,
 				A75EA5C21F68E46700B025DD /* AppDelegate.swift in Sources */,
+				A712960D1F7291E40053F5AC /* PickImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
