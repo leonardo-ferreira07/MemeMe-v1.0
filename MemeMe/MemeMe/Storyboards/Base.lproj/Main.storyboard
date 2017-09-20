@@ -24,9 +24,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKn-5f-8K6">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick Image" id="KUD-a7-PC6">
+                                    <barButtonItem title="Library" id="KUD-a7-PC6">
                                         <connections>
-                                            <action selector="pickImageClicked:" destination="BYZ-38-t0r" id="dAu-1z-0XY"/>
+                                            <action selector="pickImageFromLibraryClicked:" destination="BYZ-38-t0r" id="Gy2-xd-xne"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1wS-16-Y1e"/>
+                                    <barButtonItem title="Camera" id="Nh6-n6-v86">
+                                        <connections>
+                                            <action selector="pickImageFromCameraClicked:" destination="BYZ-38-t0r" id="Onw-oS-72d"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -39,6 +45,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gKn-5f-8K6" secondAttribute="bottom" id="OrK-TF-Gc8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Nh6-n6-v86" id="B3I-aE-SN8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
