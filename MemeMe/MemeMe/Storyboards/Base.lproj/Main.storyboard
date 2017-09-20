@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueExtras.ttc">
+            <string>HelveticaNeue-CondensedBlack</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Pick Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PickImageViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="xyu-6Q-LGq"/>
+                        <viewControllerLayoutGuide type="bottom" id="V0O-3M-yau"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKn-5f-8K6">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="GfD-b9-JzN"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Library" id="KUD-a7-PC6">
                                         <connections>
@@ -30,27 +39,71 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1wS-16-Y1e"/>
-                                    <barButtonItem title="Camera" id="Nh6-n6-v86">
+                                    <barButtonItem systemItem="camera" id="Nh6-n6-v86">
                                         <connections>
                                             <action selector="pickImageFromCameraClicked:" destination="BYZ-38-t0r" id="Onw-oS-72d"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1UA-P4-PY5">
+                                <rect key="frame" x="0.0" y="93" width="375" height="636"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6z-np-IpJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Yy0-9f-PQY"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="action" id="oIO-yB-wgM"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ydh-QX-DZx"/>
+                                    <barButtonItem title="Cancel" id="08S-oP-os0"/>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-wf-LdE">
+                                <rect key="frame" x="20" y="133" width="335" height="48"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f85-zj-gbu">
+                                <rect key="frame" x="20" y="641" width="335" height="48"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Pin-wf-LdE" secondAttribute="trailing" constant="20" id="3YN-Wr-bSp"/>
                             <constraint firstAttribute="trailing" secondItem="gKn-5f-8K6" secondAttribute="trailing" id="6k8-RY-u8c"/>
+                            <constraint firstAttribute="trailing" secondItem="a6z-np-IpJ" secondAttribute="trailing" id="8MT-WX-Wfc"/>
+                            <constraint firstAttribute="trailing" secondItem="f85-zj-gbu" secondAttribute="trailing" constant="20" id="AJS-2p-N0T"/>
                             <constraint firstItem="gKn-5f-8K6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AsB-aj-naA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gKn-5f-8K6" secondAttribute="bottom" id="OrK-TF-Gc8"/>
+                            <constraint firstItem="1UA-P4-PY5" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" id="D6E-OB-MVl"/>
+                            <constraint firstItem="Pin-wf-LdE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EL9-ob-J3B"/>
+                            <constraint firstItem="a6z-np-IpJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HrO-wz-uKG"/>
+                            <constraint firstItem="V0O-3M-yau" firstAttribute="top" secondItem="gKn-5f-8K6" secondAttribute="bottom" id="OrK-TF-Gc8"/>
+                            <constraint firstItem="Pin-wf-LdE" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" constant="40" id="bhO-Hn-HgM"/>
+                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="1UA-P4-PY5" secondAttribute="bottom" id="cIV-UP-ShE"/>
+                            <constraint firstItem="1UA-P4-PY5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ddD-ca-Sjb"/>
+                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="f85-zj-gbu" secondAttribute="bottom" constant="40" id="eNJ-Wl-YuE"/>
+                            <constraint firstItem="a6z-np-IpJ" firstAttribute="top" secondItem="xyu-6Q-LGq" secondAttribute="bottom" id="ir1-RP-CXQ"/>
+                            <constraint firstAttribute="trailing" secondItem="1UA-P4-PY5" secondAttribute="trailing" id="mBM-ed-Qh4"/>
+                            <constraint firstItem="f85-zj-gbu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="tGw-Yo-OGy"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="f85-zj-gbu" id="a7Q-Bq-UNL"/>
                         <outlet property="cameraButton" destination="Nh6-n6-v86" id="B3I-aE-SN8"/>
+                        <outlet property="memeImageView" destination="1UA-P4-PY5" id="SPd-O2-U6f"/>
+                        <outlet property="topTextField" destination="Pin-wf-LdE" id="lTd-7V-ReJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.512315270935964"/>
         </scene>
     </scenes>
 </document>
