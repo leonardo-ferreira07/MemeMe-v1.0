@@ -85,7 +85,7 @@ extension PickImageViewController {
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
             NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedStringKey.strokeWidth.rawValue: 2.0]
+            NSAttributedStringKey.strokeWidth.rawValue: -5.0]
     }
 }
 
@@ -99,6 +99,7 @@ extension PickImageViewController {
     
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
