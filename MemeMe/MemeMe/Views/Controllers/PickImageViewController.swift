@@ -15,6 +15,9 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topBar: UIToolbar!
+    @IBOutlet weak var bottomBar: UIToolbar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,10 @@ class PickImageViewController: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareClicked(_ sender: UIBarButtonItem) {
+        memeImageView.image = MemeHelper.generateMemedImage(self)
     }
     
 }
