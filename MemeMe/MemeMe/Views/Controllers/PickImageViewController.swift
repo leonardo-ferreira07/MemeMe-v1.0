@@ -14,7 +14,7 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,11 +102,17 @@ extension PickImageViewController {
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-         self.view.frame.origin.y -= self.getKeyboardHeight(notification)
+        self.bottomLayoutConstraint.constant += self.getKeyboardHeight(notification)
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        self.view.frame.origin.y += self.getKeyboardHeight(notification)
+        self.bottomLayoutConstraint.constant -= self.getKeyboardHeight(notification)
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {

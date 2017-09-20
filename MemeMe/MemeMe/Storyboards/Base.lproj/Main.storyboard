@@ -100,10 +100,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="OrK-TF-Gc8" id="xZC-4W-LtR"/>
                         <outlet property="bottomTextField" destination="f85-zj-gbu" id="a7Q-Bq-UNL"/>
                         <outlet property="cameraButton" destination="Nh6-n6-v86" id="B3I-aE-SN8"/>
                         <outlet property="memeImageView" destination="1UA-P4-PY5" id="SPd-O2-U6f"/>
-                        <outlet property="topLayoutConstraint" destination="ir1-RP-CXQ" id="S8H-RL-gKi"/>
                         <outlet property="topTextField" destination="Pin-wf-LdE" id="lTd-7V-ReJ"/>
                     </connections>
                 </viewController>
