@@ -14,6 +14,7 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,14 @@ class PickImageViewController: UIViewController {
         topTextField.textAlignment = .center
         bottomTextField.defaultTextAttributes = textFieldTextAttributes()
         bottomTextField.textAlignment = .center
+        
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        unsubscribeFromKeyboardNotifications()
     }
 
     // MARK: - Actions
@@ -77,5 +86,45 @@ extension PickImageViewController {
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
             NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSAttributedStringKey.strokeWidth.rawValue: 2.0]
+    }
+}
+
+// MARK: - Keyboard Notifications
+
+extension PickImageViewController {
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification:Notification) {
+         self.view.frame.origin.y -= self.getKeyboardHeight(notification)
+    }
+    
+    @objc func keyboardWillHide(_ notification:Notification) {
+        self.view.frame.origin.y += self.getKeyboardHeight(notification)
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+                return keyboardSize.cgRectValue.height
+            }
+        }
+        return 0.0
+    }
+}
+
+// MARK: - TextField Delegate
+
+extension PickImageViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
 }

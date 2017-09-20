@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -66,12 +65,18 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uMN-Wj-8Bs"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f85-zj-gbu">
                                 <rect key="frame" x="20" y="641" width="335" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uNo-mC-Hzo"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,6 +103,7 @@
                         <outlet property="bottomTextField" destination="f85-zj-gbu" id="a7Q-Bq-UNL"/>
                         <outlet property="cameraButton" destination="Nh6-n6-v86" id="B3I-aE-SN8"/>
                         <outlet property="memeImageView" destination="1UA-P4-PY5" id="SPd-O2-U6f"/>
+                        <outlet property="topLayoutConstraint" destination="ir1-RP-CXQ" id="S8H-RL-gKi"/>
                         <outlet property="topTextField" destination="Pin-wf-LdE" id="lTd-7V-ReJ"/>
                     </connections>
                 </viewController>
