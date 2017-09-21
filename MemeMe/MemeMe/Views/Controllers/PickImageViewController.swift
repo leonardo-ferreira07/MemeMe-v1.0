@@ -34,7 +34,7 @@ class PickImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        shareButton.isEnabled = false
+        shareButton.isEnabled = memeImageView.image == nil ? false : true
         
         topTextField.defaultTextAttributes = textFieldTextAttributes()
         topTextField.textAlignment = .center
@@ -75,6 +75,13 @@ class PickImageViewController: UIViewController {
         memeImageView.image = MemeHelper.generateMemedImage(self)
     }
     
+    @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
+        memeImageView.image = nil
+        topTextField.text = TextsForFields.top.rawValue
+        bottomTextField.text = TextsForFields.bottom.rawValue
+    }
+    
+    
 }
 
 // MARK: - Image Picker Delegate
@@ -83,7 +90,6 @@ extension PickImageViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            shareButton.isEnabled = true
             memeImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)
