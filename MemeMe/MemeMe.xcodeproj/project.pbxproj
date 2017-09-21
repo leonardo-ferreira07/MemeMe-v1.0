@@ -87,7 +87,7 @@
 		A712960F1F7291FB0053F5AC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				A72319131F73F1F100128D44 /* Impact.otf */,
+				A72319191F73FB1500128D44 /* Fonts */,
 				A75EA5C81F68E46700B025DD /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -99,6 +99,14 @@
 				A72319161F73F60300128D44 /* Meme+UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A72319191F73FB1500128D44 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A72319131F73F1F100128D44 /* Impact.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A75EA5B51F68E46700B025DD = {
