@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A707D26B1F73FC8B006AA79A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26A1F73FC8B006AA79A /* DesignableView.swift */; };
 		A707D26D1F73FF67006AA79A /* ChooseFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26C1F73FF67006AA79A /* ChooseFontViewController.swift */; };
+		A707D2701F7405D7006AA79A /* FontTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26F1F7405D7006AA79A /* FontTableViewCell.swift */; };
 		A70A8D4B1F72BED7007D3AD5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8D4A1F72BED7007D3AD5 /* Meme.swift */; };
 		A70A8D4E1F72BF40007D3AD5 /* MemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8D4D1F72BF40007D3AD5 /* MemeHelper.swift */; };
 		A712960D1F7291E40053F5AC /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712960C1F7291E40053F5AC /* PickImageViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		A707D26A1F73FC8B006AA79A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		A707D26C1F73FF67006AA79A /* ChooseFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFontViewController.swift; sourceTree = "<group>"; };
+		A707D26F1F7405D7006AA79A /* FontTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTableViewCell.swift; sourceTree = "<group>"; };
 		A70A8D4A1F72BED7007D3AD5 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		A70A8D4D1F72BF40007D3AD5 /* MemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeHelper.swift; sourceTree = "<group>"; };
 		A712960C1F7291E40053F5AC /* PickImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A707D26E1F7405C1006AA79A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A707D26F1F7405D7006AA79A /* FontTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A70A8D491F72BECA007D3AD5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		A712960A1F7291BB0053F5AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A707D26E1F7405C1006AA79A /* Cells */,
 				A712960B1F7291C20053F5AC /* Controllers */,
 			);
 			path = Views;
@@ -223,6 +234,7 @@
 				A75EA5C21F68E46700B025DD /* AppDelegate.swift in Sources */,
 				A707D26B1F73FC8B006AA79A /* DesignableView.swift in Sources */,
 				A712960D1F7291E40053F5AC /* PickImageViewController.swift in Sources */,
+				A707D2701F7405D7006AA79A /* FontTableViewCell.swift in Sources */,
 				A70A8D4E1F72BF40007D3AD5 /* MemeHelper.swift in Sources */,
 				A707D26D1F73FF67006AA79A /* ChooseFontViewController.swift in Sources */,
 				A72319171F73F60300128D44 /* Meme+UIViewController.swift in Sources */,

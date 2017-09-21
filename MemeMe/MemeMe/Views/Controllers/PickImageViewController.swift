@@ -49,6 +49,16 @@ class PickImageViewController: UIViewController {
         
         unsubscribeFromKeyboardNotifications()
     }
+    
+    // MARK: - Segue navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? ChooseFontViewController {
+            viewController.callbackFont = { (font) in
+                
+            }
+        }
+    }
 
     // MARK: - Actions
     

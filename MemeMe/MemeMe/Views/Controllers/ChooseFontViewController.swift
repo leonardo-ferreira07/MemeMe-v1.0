@@ -10,10 +10,21 @@ import UIKit
 
 class ChooseFontViewController: UIViewController {
 
+    enum FontCell: String {
+        case fontCell
+    }
+    
+    var fonts: [String] = []
+    var callbackFont: ((String) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        for family: String in UIFont.familyNames {
+            for name: String in UIFont.fontNames(forFamilyName: family) {
+                fonts.append(name)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +36,40 @@ class ChooseFontViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func exitClicked(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+
+// MARK: - TableView Delegate and Data Source
+
+extension ChooseFontViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fonts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FontCell.fontCell.rawValue, for: indexPath) as? FontTableViewCell {
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? FontTableViewCell {
+            cell.configure(withFont: fonts[indexPath.row])
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        callbackFont?(fonts[indexPath.row])
         dismiss(animated: true, completion: nil)
     }
     
