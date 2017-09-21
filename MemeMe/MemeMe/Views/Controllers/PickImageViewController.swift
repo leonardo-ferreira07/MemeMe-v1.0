@@ -28,20 +28,18 @@ class PickImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        shareButton.isEnabled = memeImageView.image == nil ? false : true
-        
         topTextField.defaultTextAttributes = textFieldTextAttributes()
         topTextField.textAlignment = .center
         topTextField.text = TextsForFields.top.rawValue
         bottomTextField.defaultTextAttributes = textFieldTextAttributes()
         bottomTextField.textAlignment = .center
         bottomTextField.text = TextsForFields.bottom.rawValue
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        shareButton.isEnabled = memeImageView.image == nil ? false : true
         
         subscribeToKeyboardNotifications()
     }
@@ -72,13 +70,18 @@ class PickImageViewController: UIViewController {
     }
     
     @IBAction func shareClicked(_ sender: UIBarButtonItem) {
-        memeImageView.image = MemeHelper.generateMemedImage(self)
+        let memeImage = MemeHelper.generateMemedImage(self)
+        self.presentActivityController(withImage: memeImage, completion: {
+            MemeHelper.save(topText: self.topTextField.text ?? "",
+                            bottomText: self.bottomTextField.text ?? "",
+                            originalImage: self.memeImageView.image!,
+                            memeImage: memeImage)
+            self.clearEditor()
+        })
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
-        memeImageView.image = nil
-        topTextField.text = TextsForFields.top.rawValue
-        bottomTextField.text = TextsForFields.bottom.rawValue
+        clearEditor()
     }
     
     
@@ -163,5 +166,15 @@ extension PickImageViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+    }
+}
+
+// MARK: - Clear Meme Editor
+
+extension PickImageViewController {
+    func clearEditor() {
+        memeImageView.image = nil
+        topTextField.text = TextsForFields.top.rawValue
+        bottomTextField.text = TextsForFields.bottom.rawValue
     }
 }
