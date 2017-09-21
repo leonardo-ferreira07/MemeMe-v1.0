@@ -17,6 +17,7 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var topBar: UIToolbar!
     @IBOutlet weak var bottomBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class PickImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        shareButton.isEnabled = false
         
         topTextField.defaultTextAttributes = textFieldTextAttributes()
         topTextField.textAlignment = .center
@@ -74,6 +76,7 @@ extension PickImageViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            shareButton.isEnabled = true
             memeImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)
@@ -91,7 +94,7 @@ extension PickImageViewController {
         return [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!,
             NSAttributedStringKey.strokeWidth.rawValue: -5.0]
     }
 }

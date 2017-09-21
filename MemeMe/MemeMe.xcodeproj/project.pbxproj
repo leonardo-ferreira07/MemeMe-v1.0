@@ -10,6 +10,7 @@
 		A70A8D4B1F72BED7007D3AD5 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8D4A1F72BED7007D3AD5 /* Meme.swift */; };
 		A70A8D4E1F72BF40007D3AD5 /* MemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8D4D1F72BF40007D3AD5 /* MemeHelper.swift */; };
 		A712960D1F7291E40053F5AC /* PickImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712960C1F7291E40053F5AC /* PickImageViewController.swift */; };
+		A72319141F73F22500128D44 /* Impact.otf in Resources */ = {isa = PBXBuildFile; fileRef = A72319131F73F1F100128D44 /* Impact.otf */; };
 		A75EA5C21F68E46700B025DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EA5C11F68E46700B025DD /* AppDelegate.swift */; };
 		A75EA5C71F68E46700B025DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75EA5C51F68E46700B025DD /* Main.storyboard */; };
 		A75EA5C91F68E46700B025DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75EA5C81F68E46700B025DD /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		A70A8D4A1F72BED7007D3AD5 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		A70A8D4D1F72BF40007D3AD5 /* MemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeHelper.swift; sourceTree = "<group>"; };
 		A712960C1F7291E40053F5AC /* PickImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageViewController.swift; sourceTree = "<group>"; };
+		A72319131F73F1F100128D44 /* Impact.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.otf; sourceTree = "<group>"; };
 		A75EA5BE1F68E46700B025DD /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75EA5C11F68E46700B025DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A75EA5C61F68E46700B025DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		A712960F1F7291FB0053F5AC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A72319131F73F1F100128D44 /* Impact.otf */,
 				A75EA5C81F68E46700B025DD /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A72319141F73F22500128D44 /* Impact.otf in Resources */,
 				A75EA5CC1F68E46700B025DD /* LaunchScreen.storyboard in Resources */,
 				A75EA5C91F68E46700B025DD /* Assets.xcassets in Resources */,
 				A75EA5C71F68E46700B025DD /* Main.storyboard in Resources */,

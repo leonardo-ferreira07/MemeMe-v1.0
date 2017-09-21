@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Impact.otf</string>
+	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>MemeMe App needs access to your library to pick photos.</string>
 	<key>NSCameraUsageDescription</key>

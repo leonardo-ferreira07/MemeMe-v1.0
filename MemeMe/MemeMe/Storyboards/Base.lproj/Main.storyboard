@@ -109,6 +109,7 @@
                         <outlet property="bottomTextField" destination="f85-zj-gbu" id="a7Q-Bq-UNL"/>
                         <outlet property="cameraButton" destination="Nh6-n6-v86" id="B3I-aE-SN8"/>
                         <outlet property="memeImageView" destination="1UA-P4-PY5" id="SPd-O2-U6f"/>
+                        <outlet property="shareButton" destination="oIO-yB-wgM" id="nGT-mh-Gae"/>
                         <outlet property="topBar" destination="a6z-np-IpJ" id="knc-J7-dR5"/>
                         <outlet property="topTextField" destination="Pin-wf-LdE" id="lTd-7V-ReJ"/>
                     </connections>
