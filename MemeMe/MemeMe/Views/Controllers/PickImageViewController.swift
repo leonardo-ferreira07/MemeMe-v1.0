@@ -52,7 +52,6 @@ class PickImageViewController: UIViewController {
 
     // MARK: - Actions
     
-    
     @IBAction func pickImageFromLibraryClicked(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
