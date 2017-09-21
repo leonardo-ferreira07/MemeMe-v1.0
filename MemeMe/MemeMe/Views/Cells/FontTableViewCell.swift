@@ -13,7 +13,11 @@ class FontTableViewCell: UITableViewCell {
     @IBOutlet weak var fontLabel: UILabel!
     
     func configure(withFont font: String) {
-        fontLabel.text = font
+        let attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.strokeColor: UIColor.black,
+        NSAttributedStringKey.foregroundColor: UIColor.white,
+        NSAttributedStringKey.font: UIFont(name: font, size: 20)!,
+        NSAttributedStringKey.strokeWidth: -5.0]
+        fontLabel.attributedText = NSMutableAttributedString(string: font, attributes: attributes)
     }
 
 }

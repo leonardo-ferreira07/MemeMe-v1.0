@@ -36,12 +36,14 @@ class PickImageViewController: UIViewController {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         shareButton.isEnabled = memeImageView.image == nil ? false : true
         
+        resignTextFields()
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        resignTextFields()
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -179,8 +181,14 @@ extension PickImageViewController: UITextFieldDelegate {
 extension PickImageViewController {
     func clearEditor() {
         memeImageView.image = nil
+        resignTextFields()
+    }
+    
+    func resignTextFields() {
         topTextField.text = TextsForFields.top.rawValue
         bottomTextField.text = TextsForFields.bottom.rawValue
+        topTextField.resignFirstResponder()
+        bottomTextField.resignFirstResponder()
     }
     
     func configDefaulTextAttributes(withFont font: String? = nil) {

@@ -77,7 +77,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-wf-LdE">
-                                <rect key="frame" x="20" y="133" width="335" height="46"/>
+                                <rect key="frame" x="20" y="113" width="335" height="46"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f85-zj-gbu">
-                                <rect key="frame" x="20" y="641" width="335" height="48"/>
+                                <rect key="frame" x="20" y="661" width="335" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -106,10 +106,10 @@
                             <constraint firstItem="Pin-wf-LdE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EL9-ob-J3B"/>
                             <constraint firstItem="a6z-np-IpJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HrO-wz-uKG"/>
                             <constraint firstItem="V0O-3M-yau" firstAttribute="top" secondItem="gKn-5f-8K6" secondAttribute="bottom" id="OrK-TF-Gc8"/>
-                            <constraint firstItem="Pin-wf-LdE" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" constant="40" id="bhO-Hn-HgM"/>
+                            <constraint firstItem="Pin-wf-LdE" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" constant="20" id="bhO-Hn-HgM"/>
                             <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="1UA-P4-PY5" secondAttribute="bottom" id="cIV-UP-ShE"/>
                             <constraint firstItem="1UA-P4-PY5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ddD-ca-Sjb"/>
-                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="f85-zj-gbu" secondAttribute="bottom" constant="40" id="eNJ-Wl-YuE"/>
+                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="f85-zj-gbu" secondAttribute="bottom" constant="20" id="eNJ-Wl-YuE"/>
                             <constraint firstItem="a6z-np-IpJ" firstAttribute="top" secondItem="xyu-6Q-LGq" secondAttribute="bottom" id="ir1-RP-CXQ"/>
                             <constraint firstAttribute="trailing" secondItem="1UA-P4-PY5" secondAttribute="trailing" id="mBM-ed-Qh4"/>
                             <constraint firstItem="f85-zj-gbu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="tGw-Yo-OGy"/>
