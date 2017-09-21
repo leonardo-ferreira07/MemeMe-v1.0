@@ -10,6 +10,11 @@ import UIKit
 
 class PickImageViewController: UIViewController {
     
+    enum TextsForFields: String {
+        case top = "TOP"
+        case bottom = "BOTTOM"
+    }
+    
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
@@ -33,8 +38,10 @@ class PickImageViewController: UIViewController {
         
         topTextField.defaultTextAttributes = textFieldTextAttributes()
         topTextField.textAlignment = .center
+        topTextField.text = TextsForFields.top.rawValue
         bottomTextField.defaultTextAttributes = textFieldTextAttributes()
         bottomTextField.textAlignment = .center
+        bottomTextField.text = TextsForFields.bottom.rawValue
         
         subscribeToKeyboardNotifications()
     }
@@ -139,6 +146,13 @@ extension PickImageViewController {
 // MARK: - TextField Delegate
 
 extension PickImageViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == TextsForFields.top.rawValue || textField.text == TextsForFields.bottom.rawValue {
+            textField.text = ""
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         

@@ -12,6 +12,9 @@
         <array key="HelveticaNeueExtras.ttc">
             <string>HelveticaNeue-CondensedBlack</string>
         </array>
+        <array key="Impact.otf">
+            <string>Impact</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Pick Image View Controller-->
@@ -65,9 +68,9 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-wf-LdE">
-                                <rect key="frame" x="20" y="133" width="335" height="48"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <rect key="frame" x="20" y="133" width="335" height="46"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uMN-Wj-8Bs"/>
