@@ -28,12 +28,7 @@ class PickImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topTextField.defaultTextAttributes = textFieldTextAttributes()
-        topTextField.textAlignment = .center
-        topTextField.text = TextsForFields.top.rawValue
-        bottomTextField.defaultTextAttributes = textFieldTextAttributes()
-        bottomTextField.textAlignment = .center
-        bottomTextField.text = TextsForFields.bottom.rawValue
+        configDefaulTextAttributes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +50,7 @@ class PickImageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewController = segue.destination as? ChooseFontViewController {
             viewController.callbackFont = { (font) in
-                
+                self.configDefaulTextAttributes(withFont: font)
             }
         }
     }
@@ -115,11 +110,12 @@ extension PickImageViewController: UIImagePickerControllerDelegate, UINavigation
 // MARK: - Text Attributes
 
 extension PickImageViewController {
-    func textFieldTextAttributes() -> [String: Any] {
+    func textFieldTextAttributes(withFont font: String? = nil) -> [String: Any] {
+        
         return [
             NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: "Impact", size: 40)!,
+            NSAttributedStringKey.font.rawValue: UIFont(name: font ?? "Impact", size: 40)!,
             NSAttributedStringKey.strokeWidth.rawValue: -5.0]
     }
 }
@@ -178,12 +174,21 @@ extension PickImageViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - Clear Meme Editor
+// MARK: - Configs Meme Editor
 
 extension PickImageViewController {
     func clearEditor() {
         memeImageView.image = nil
         topTextField.text = TextsForFields.top.rawValue
+        bottomTextField.text = TextsForFields.bottom.rawValue
+    }
+    
+    func configDefaulTextAttributes(withFont font: String? = nil) {
+        topTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
+        topTextField.textAlignment = .center
+        topTextField.text = TextsForFields.top.rawValue
+        bottomTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
+        bottomTextField.textAlignment = .center
         bottomTextField.text = TextsForFields.bottom.rawValue
     }
 }
