@@ -37,7 +37,7 @@ class PickImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        shareButton.isEnabled = memeImageView.image == nil ? false : true
+        resetShareButton()
         
         resignTextFields()
         subscribeToKeyboardNotifications()
@@ -72,19 +72,11 @@ class PickImageViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func pickImageFromLibraryClicked(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        chooseSourceType(sourceType: .photoLibrary)
     }
     
     @IBAction func pickImageFromCameraClicked(_ sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        chooseSourceType(sourceType: .camera)
     }
     
     @IBAction func shareClicked(_ sender: UIBarButtonItem) {
@@ -102,6 +94,13 @@ class PickImageViewController: UIViewController {
         clearEditor()
     }
     
+    func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
+    }
     
 }
 
@@ -117,6 +116,7 @@ extension PickImageViewController: UIImagePickerControllerDelegate, UINavigation
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        memeImageView.image = nil
         picker.dismiss(animated: true, completion: nil)
     }
 }
@@ -199,8 +199,13 @@ extension PickImageViewController: UITextFieldDelegate {
 extension PickImageViewController {
     func clearEditor() {
         memeImageView.image = nil
+        resetShareButton()
         configDefaulTextAttributes()
         resignTextFields()
+    }
+    
+    func resetShareButton() {
+        shareButton.isEnabled = memeImageView.image == nil ? false : true
     }
     
     func resignTextFields() {

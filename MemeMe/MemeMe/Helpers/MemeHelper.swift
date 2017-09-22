@@ -11,13 +11,15 @@ import UIKit
 struct MemeHelper {
     
     static func save(topText: String, bottomText: String, originalImage: UIImage, memeImage: UIImage) {
-        _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+        
+        if topText.characters.count > 0 && bottomText.characters.count > 0 {
+            _ = Meme(topText: topText, bottomText: bottomText, originalImage: originalImage, memeImage: memeImage)
+        }
     }
     
     static func generateMemedImage(_ viewController: PickImageViewController) -> UIImage {
         
-        viewController.topBar.isHidden = true
-        viewController.bottomBar.isHidden = true
+        verifyViewControllerBars(true, viewController: viewController)
         
         // Render view to an image
         UIGraphicsBeginImageContext(viewController.view.frame.size)
@@ -25,10 +27,14 @@ struct MemeHelper {
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        viewController.topBar.isHidden = false
-        viewController.bottomBar.isHidden = false
+        verifyViewControllerBars(false, viewController: viewController)
         
         return memedImage
+    }
+    
+    private static func verifyViewControllerBars(_ enabled: Bool, viewController: PickImageViewController) {
+        viewController.topBar.isHidden = enabled
+        viewController.bottomBar.isHidden = enabled
     }
     
 }
