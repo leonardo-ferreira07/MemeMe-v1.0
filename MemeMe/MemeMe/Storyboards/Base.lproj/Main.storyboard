@@ -29,25 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKn-5f-8K6">
-                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="GfD-b9-JzN"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Library" id="KUD-a7-PC6">
-                                        <connections>
-                                            <action selector="pickImageFromLibraryClicked:" destination="BYZ-38-t0r" id="Gy2-xd-xne"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1wS-16-Y1e"/>
-                                    <barButtonItem systemItem="camera" id="Nh6-n6-v86">
-                                        <connections>
-                                            <action selector="pickImageFromCameraClicked:" destination="BYZ-38-t0r" id="Onw-oS-72d"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1UA-P4-PY5">
                                 <rect key="frame" x="0.0" y="93" width="375" height="636"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +58,7 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-wf-LdE">
-                                <rect key="frame" x="20" y="113" width="335" height="46"/>
+                                <rect key="frame" x="20" y="98" width="335" height="46"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -86,7 +67,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f85-zj-gbu">
-                                <rect key="frame" x="20" y="661" width="335" height="48"/>
+                                <rect key="frame" x="20" y="676" width="335" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -94,10 +75,30 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uNo-mC-Hzo"/>
                                 </connections>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKn-5f-8K6">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="GfD-b9-JzN"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Library" id="KUD-a7-PC6">
+                                        <connections>
+                                            <action selector="pickImageFromLibraryClicked:" destination="BYZ-38-t0r" id="Gy2-xd-xne"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1wS-16-Y1e"/>
+                                    <barButtonItem systemItem="camera" id="Nh6-n6-v86">
+                                        <connections>
+                                            <action selector="pickImageFromCameraClicked:" destination="BYZ-38-t0r" id="Onw-oS-72d"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pin-wf-LdE" secondAttribute="trailing" constant="20" id="3YN-Wr-bSp"/>
+                            <constraint firstItem="f85-zj-gbu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pin-wf-LdE" secondAttribute="bottom" id="3rj-jP-gTP"/>
                             <constraint firstAttribute="trailing" secondItem="gKn-5f-8K6" secondAttribute="trailing" id="6k8-RY-u8c"/>
                             <constraint firstAttribute="trailing" secondItem="a6z-np-IpJ" secondAttribute="trailing" id="8MT-WX-Wfc"/>
                             <constraint firstAttribute="trailing" secondItem="f85-zj-gbu" secondAttribute="trailing" constant="20" id="AJS-2p-N0T"/>
@@ -106,10 +107,10 @@
                             <constraint firstItem="Pin-wf-LdE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EL9-ob-J3B"/>
                             <constraint firstItem="a6z-np-IpJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HrO-wz-uKG"/>
                             <constraint firstItem="V0O-3M-yau" firstAttribute="top" secondItem="gKn-5f-8K6" secondAttribute="bottom" id="OrK-TF-Gc8"/>
-                            <constraint firstItem="Pin-wf-LdE" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" constant="20" id="bhO-Hn-HgM"/>
+                            <constraint firstItem="Pin-wf-LdE" firstAttribute="top" secondItem="a6z-np-IpJ" secondAttribute="bottom" constant="5" id="bhO-Hn-HgM"/>
                             <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="1UA-P4-PY5" secondAttribute="bottom" id="cIV-UP-ShE"/>
                             <constraint firstItem="1UA-P4-PY5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ddD-ca-Sjb"/>
-                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="f85-zj-gbu" secondAttribute="bottom" constant="20" id="eNJ-Wl-YuE"/>
+                            <constraint firstItem="gKn-5f-8K6" firstAttribute="top" secondItem="f85-zj-gbu" secondAttribute="bottom" constant="5" id="eNJ-Wl-YuE"/>
                             <constraint firstItem="a6z-np-IpJ" firstAttribute="top" secondItem="xyu-6Q-LGq" secondAttribute="bottom" id="ir1-RP-CXQ"/>
                             <constraint firstAttribute="trailing" secondItem="1UA-P4-PY5" secondAttribute="trailing" id="mBM-ed-Qh4"/>
                             <constraint firstItem="f85-zj-gbu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="tGw-Yo-OGy"/>
@@ -123,6 +124,7 @@
                         <outlet property="memeImageView" destination="1UA-P4-PY5" id="SPd-O2-U6f"/>
                         <outlet property="shareButton" destination="oIO-yB-wgM" id="nGT-mh-Gae"/>
                         <outlet property="topBar" destination="a6z-np-IpJ" id="knc-J7-dR5"/>
+                        <outlet property="topBarConstraint" destination="ir1-RP-CXQ" id="JVV-eQ-kIK"/>
                         <outlet property="topTextField" destination="Pin-wf-LdE" id="lTd-7V-ReJ"/>
                     </connections>
                 </viewController>
@@ -155,10 +157,10 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-0Y-Ew7" customClass="DesignableView" customModule="MemeMe" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="266" width="335" height="280"/>
+                                            <rect key="frame" x="20" y="266.66666666666663" width="335" height="279.99999999999989"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="470-Za-DSD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="280"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="279.99999999999994"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     <prototypes>

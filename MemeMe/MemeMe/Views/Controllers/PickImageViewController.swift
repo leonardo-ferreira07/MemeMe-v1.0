@@ -19,6 +19,7 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var topBarConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var topBar: UIToolbar!
     @IBOutlet weak var bottomBar: UIToolbar!
@@ -147,6 +148,9 @@ extension PickImageViewController {
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
+        if (UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight) && topBarConstraint.constant == 0  {
+            self.topBarConstraint.constant -= self.topBar.frame.height
+        }
         self.bottomLayoutConstraint.constant += self.getKeyboardHeight(notification)
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -154,6 +158,9 @@ extension PickImageViewController {
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
+        if self.topBarConstraint.constant == -self.topBar.frame.height {
+            self.topBarConstraint.constant = 0
+        }
         self.bottomLayoutConstraint.constant -= self.getKeyboardHeight(notification)
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()

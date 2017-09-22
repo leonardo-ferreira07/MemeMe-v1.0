@@ -192,6 +192,7 @@
 				TargetAttributes = {
 					A75EA5BD1F68E46700B025DD = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = R22VMQT29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -378,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R22VMQT29M;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.ferreira.MemeMe;
@@ -391,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R22VMQT29M;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.ferreira.MemeMe;
