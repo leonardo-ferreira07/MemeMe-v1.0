@@ -170,17 +170,17 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LALALA Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-sl-7Ll">
-                                                                        <rect key="frame" x="10" y="5" width="315" height="33.666666666666664"/>
+                                                                        <rect key="frame" x="10" y="15.000000000000002" width="315" height="13.66666666666667"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottom" secondItem="IeZ-sl-7Ll" secondAttribute="bottom" constant="5" id="1M1-Si-4gn"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="IeZ-sl-7Ll" secondAttribute="bottom" constant="15" id="1M1-Si-4gn"/>
                                                                     <constraint firstItem="IeZ-sl-7Ll" firstAttribute="leading" secondItem="K3l-mk-X8W" secondAttribute="leading" constant="10" id="9nf-R9-xWp"/>
                                                                     <constraint firstAttribute="trailing" secondItem="IeZ-sl-7Ll" secondAttribute="trailing" constant="10" id="nb0-b3-UUM"/>
-                                                                    <constraint firstItem="IeZ-sl-7Ll" firstAttribute="top" secondItem="K3l-mk-X8W" secondAttribute="top" constant="5" id="nhz-sh-aYa"/>
+                                                                    <constraint firstItem="IeZ-sl-7Ll" firstAttribute="top" secondItem="K3l-mk-X8W" secondAttribute="top" constant="15" id="nhz-sh-aYa"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
@@ -231,6 +231,9 @@
                             <constraint firstAttribute="bottom" secondItem="tic-zU-TJb" secondAttribute="bottom" id="uMZ-Fs-Ihf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="c4h-0Y-Ew7" id="s3y-vI-BDX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUA-Ww-Qrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

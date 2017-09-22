@@ -14,6 +14,8 @@ class ChooseFontViewController: UIViewController {
         case fontCell
     }
     
+    @IBOutlet weak var contentView: DesignableView!
+    
     var fonts: [String] = []
     var callbackFont: ((String) -> Void)?
     
@@ -25,6 +27,28 @@ class ChooseFontViewController: UIViewController {
                 fonts.append(name)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        prepareForAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        animateIn()
+    }
+    
+    // MARK: - Animations
+    
+    func prepareForAnimation() {
+        contentView.isHidden = true
+    }
+    
+    func animateIn() {
+        contentView.animateShowPopingUp()
     }
 
     override func didReceiveMemoryWarning() {

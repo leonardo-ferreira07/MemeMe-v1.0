@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70558611F7538860001459B /* Meme+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70558601F7538860001459B /* Meme+UIView.swift */; };
 		A707D26B1F73FC8B006AA79A /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26A1F73FC8B006AA79A /* DesignableView.swift */; };
 		A707D26D1F73FF67006AA79A /* ChooseFontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26C1F73FF67006AA79A /* ChooseFontViewController.swift */; };
 		A707D2701F7405D7006AA79A /* FontTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707D26F1F7405D7006AA79A /* FontTableViewCell.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70558601F7538860001459B /* Meme+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Meme+UIView.swift"; sourceTree = "<group>"; };
 		A707D26A1F73FC8B006AA79A /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		A707D26C1F73FF67006AA79A /* ChooseFontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFontViewController.swift; sourceTree = "<group>"; };
 		A707D26F1F7405D7006AA79A /* FontTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				A72319161F73F60300128D44 /* Meme+UIViewController.swift */,
 				A707D26A1F73FC8B006AA79A /* DesignableView.swift */,
+				A70558601F7538860001459B /* Meme+UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				A707D2701F7405D7006AA79A /* FontTableViewCell.swift in Sources */,
 				A70A8D4E1F72BF40007D3AD5 /* MemeHelper.swift in Sources */,
 				A707D26D1F73FF67006AA79A /* ChooseFontViewController.swift in Sources */,
+				A70558611F7538860001459B /* Meme+UIView.swift in Sources */,
 				A72319171F73F60300128D44 /* Meme+UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
