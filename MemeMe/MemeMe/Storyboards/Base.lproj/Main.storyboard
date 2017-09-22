@@ -169,7 +169,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="43.666666666666664"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LALALA Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-sl-7Ll">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LALALA Font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeZ-sl-7Ll">
                                                                         <rect key="frame" x="10" y="15.000000000000002" width="315" height="13.66666666666667"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <nil key="textColor"/>
@@ -213,9 +213,13 @@
                                         <constraint firstAttribute="bottom" secondItem="9x9-c5-KRI" secondAttribute="bottom" id="93Z-MK-2hf"/>
                                         <constraint firstItem="9x9-c5-KRI" firstAttribute="top" secondItem="ruM-8b-csD" secondAttribute="top" id="A3o-LF-JXb"/>
                                         <constraint firstAttribute="trailing" secondItem="9x9-c5-KRI" secondAttribute="trailing" id="GYH-LH-2Mi"/>
-                                        <constraint firstItem="c4h-0Y-Ew7" firstAttribute="leading" secondItem="ruM-8b-csD" secondAttribute="leading" constant="20" id="Leo-io-x3t"/>
+                                        <constraint firstItem="c4h-0Y-Ew7" firstAttribute="leading" secondItem="ruM-8b-csD" secondAttribute="leading" constant="20" id="Leo-io-x3t">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                                        </constraint>
                                         <constraint firstItem="c4h-0Y-Ew7" firstAttribute="centerX" secondItem="ruM-8b-csD" secondAttribute="centerX" id="fEo-bw-xp6"/>
-                                        <constraint firstAttribute="trailing" secondItem="c4h-0Y-Ew7" secondAttribute="trailing" constant="20" id="ipW-tJ-3u0"/>
+                                        <constraint firstAttribute="trailing" secondItem="c4h-0Y-Ew7" secondAttribute="trailing" constant="20" id="ipW-tJ-3u0">
+                                            <variation key="heightClass=regular-widthClass=regular" constant="180"/>
+                                        </constraint>
                                         <constraint firstItem="9x9-c5-KRI" firstAttribute="leading" secondItem="ruM-8b-csD" secondAttribute="leading" id="kMz-ku-2di"/>
                                         <constraint firstItem="c4h-0Y-Ew7" firstAttribute="centerY" secondItem="ruM-8b-csD" secondAttribute="centerY" id="sRF-IB-Tt8"/>
                                     </constraints>
