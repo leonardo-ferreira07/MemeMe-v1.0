@@ -28,4 +28,13 @@ extension UIView {
             })
         }
     }
+    
+    public func animateShakeUpDown(duration: Double = 0.17) {
+        let shake = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        shake.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        shake.duration = 0.50
+        shake.values = [30.0, 15.0, -20.0, -10.0, 0.0]
+        
+        self.layer.add(shake, forKey: "AwesomeMagicUIShakeUpDown")
+    }
 }

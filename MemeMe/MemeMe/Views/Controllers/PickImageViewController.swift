@@ -24,6 +24,8 @@ class PickImageViewController: UIViewController {
     @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    var hadAnimation: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,15 @@ class PickImageViewController: UIViewController {
         
         resignTextFields()
         subscribeToKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !hadAnimation {
+            hadAnimation = true
+            animateTextFields()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -181,12 +192,12 @@ extension PickImageViewController: UITextFieldDelegate {
 extension PickImageViewController {
     func clearEditor() {
         memeImageView.image = nil
+        topTextField.text = TextsForFields.top.rawValue
+        bottomTextField.text = TextsForFields.bottom.rawValue
         resignTextFields()
     }
     
     func resignTextFields() {
-        topTextField.text = TextsForFields.top.rawValue
-        bottomTextField.text = TextsForFields.bottom.rawValue
         topTextField.resignFirstResponder()
         bottomTextField.resignFirstResponder()
     }
@@ -198,5 +209,18 @@ extension PickImageViewController {
         bottomTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
         bottomTextField.textAlignment = .center
         bottomTextField.text = TextsForFields.bottom.rawValue
+    }
+}
+
+// MARK: - TextFields animations
+
+extension PickImageViewController {
+    func animateTextFields() {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+            self.bottomTextField.animateShakeUpDown()
+        }
+        topTextField.animateShakeUpDown()
+        CATransaction.commit()
     }
 }
