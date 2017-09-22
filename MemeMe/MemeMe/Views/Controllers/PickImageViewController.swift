@@ -192,8 +192,7 @@ extension PickImageViewController: UITextFieldDelegate {
 extension PickImageViewController {
     func clearEditor() {
         memeImageView.image = nil
-        topTextField.text = TextsForFields.top.rawValue
-        bottomTextField.text = TextsForFields.bottom.rawValue
+        configDefaulTextAttributes()
         resignTextFields()
     }
     
