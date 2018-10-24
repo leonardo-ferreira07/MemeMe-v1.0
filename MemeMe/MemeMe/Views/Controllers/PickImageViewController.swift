@@ -94,7 +94,7 @@ class PickImageViewController: UIViewController {
         clearEditor()
     }
     
-    func chooseSourceType(sourceType: UIImagePickerControllerSourceType) {
+    func chooseSourceType(sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -108,8 +108,11 @@ class PickImageViewController: UIViewController {
 
 extension PickImageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
             memeImageView.image = image
         }
         picker.dismiss(animated: true, completion: nil)
@@ -127,10 +130,10 @@ extension PickImageViewController {
     func textFieldTextAttributes(withFont font: String? = nil) -> [String: Any] {
         
         return [
-            NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
-            NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
-            NSAttributedStringKey.font.rawValue: UIFont(name: font ?? "Impact", size: 40)!,
-            NSAttributedStringKey.strokeWidth.rawValue: -5.0]
+            NSAttributedString.Key.strokeColor.rawValue: UIColor.black,
+            NSAttributedString.Key.foregroundColor.rawValue: UIColor.white,
+            NSAttributedString.Key.font.rawValue: UIFont(name: font ?? "Impact", size: 40)!,
+            NSAttributedString.Key.strokeWidth.rawValue: -5.0]
     }
 }
 
@@ -138,13 +141,13 @@ extension PickImageViewController {
 
 extension PickImageViewController {
     func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -169,7 +172,7 @@ extension PickImageViewController {
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         if let userInfo = notification.userInfo {
-            if let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            if let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 return keyboardSize.cgRectValue.height
             }
         }
@@ -214,10 +217,10 @@ extension PickImageViewController {
     }
     
     func configDefaulTextAttributes(withFont font: String? = nil) {
-        topTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
+        topTextField.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(textFieldTextAttributes(withFont: font))
         topTextField.textAlignment = .center
         topTextField.text = TextsForFields.top.rawValue
-        bottomTextField.defaultTextAttributes = textFieldTextAttributes(withFont: font)
+        bottomTextField.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(textFieldTextAttributes(withFont: font))
         bottomTextField.textAlignment = .center
         bottomTextField.text = TextsForFields.bottom.rawValue
     }
@@ -234,4 +237,19 @@ extension PickImageViewController {
         topTextField.animateShakeUpDown()
         CATransaction.commit()
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
